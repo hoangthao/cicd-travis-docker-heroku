@@ -7,4 +7,10 @@ before_install:
 
 script:
   - ./mvnw clean install
-  - ./mvnw deploy jib:build -P deploy-docker
+  - ./mvnw deploy jib:build -P deploy-heroku,deploy-docker
+
+#deploy:
+#  provider: heroku
+#  api-key:
+#    secure: "<HEROKU_API_KEY>"
+#  app: <YOUR_HERKU_APP_NAME>
